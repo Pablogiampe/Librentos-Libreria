@@ -21,7 +21,8 @@ function NavBar() {
           <a class="nav-link fw-bolder text-dark" href="src/.html">nosotros</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bolder text-dark" href="src/.html"><cartWidget /></a>
+        
+          <a class="nav-link fw-bolder text-dark" href="src/.html"><CartWidget /></a>
         </li>
       </ul>
      
