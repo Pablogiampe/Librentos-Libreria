@@ -1,17 +1,17 @@
-;
-import './App.css';
-import NavBar from "./components/NavBar.js"
-
-
+import NavBar from "./components/NavBar/NavBar";
+import "./App.css";;
+import itemListContainer from "./components/itemListContainer/itemListContaine"
 
 function App() {
   return (
-    <div>
-    <Navbar/>
-    <h1>Tienda de Ceramica</h1>
-    <article>Lorem ipsum dolor, sit amet consectetur adipisicing, elit. Minima ratione, nisi odio, mollitia quae repudiandae fugit cupiditate molestiae. Mollitia, corrupti doloribus eum blanditiis soluta deserunt velit quam recusandae dolor nesciunt.</article></article>
+    <div className="App">
+      <NavBar />
+      <Route
+              path="/"
+              element={<itemListContainer greeting="Nuestro catálogo" />}
+            />
     </div>
-  ); 
+  );
 }
 
 export default App;
