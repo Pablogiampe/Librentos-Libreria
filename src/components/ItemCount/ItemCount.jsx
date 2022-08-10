@@ -7,10 +7,6 @@ const ItemCount = ({stock,initial, onAdd})=>{
     const[count,setCount]=useState(initial)
        
     
-    
-    const AgregarCantidad = ()=> {
-        onAdd(count)
-    }
 
 
 const restar =()=> {
@@ -33,7 +29,7 @@ const sumar =()=>{
         <button className="Boton" onClick={sumar}>+</button>
 
     </div>
-        <button className="Agregar" onClick={AgregarCantidad}>AGREGAR</button>
+
 
 
 
