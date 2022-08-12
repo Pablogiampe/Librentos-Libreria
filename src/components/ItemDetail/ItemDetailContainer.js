@@ -1,10 +1,12 @@
 import React, {useEffect,useState} from "react";
-import Card from "../card/card";
-import productos from "../data/data";
+import ItemDetail from "./ItemDetail";
+import productos1 from "../data/data1";
+import "../itemListContainer/itemListContainer.css"
 
-function Productos(id) {
+
+function Productos() {
     return new Promise((resolve, reject) => {
-      setTimeout(() => resolve(productos[id]), 3000);
+      setTimeout(() => resolve(productos1), 1000);
     });
   }
   
@@ -12,7 +14,7 @@ function Productos(id) {
     const [producto, setItem] = useState([]);
   
     useEffect(() => {
-      Productos(3)
+      Productos()
         .then((respuesta) => {
           setItem(respuesta);
         })
@@ -24,7 +26,7 @@ function Productos(id) {
       <div className="Container">
         {producto.map((item) => {
           return (
-          <Card name={item.name}stock={item.stock}img={item.img}/>
+          <ItemDetail name={item.name}stock={item.stock}img={item.img} description={item.description}/>
           );
         })}
       </div>

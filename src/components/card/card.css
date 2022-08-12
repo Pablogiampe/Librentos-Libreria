@@ -1,10 +1,9 @@
-
+.main{display: inline-flex;}
  
   .card{
-    margin: 20px 15px;
-    min-height: 100px;
+    margin: 20px 15px;;
     width: 280px;
-    height: 100%;
+    ;
     border-radius: 8px;
     box-shadow: 0px 0px 4px rgba(0,0,0,0.80);
     overflow: hidden;  
@@ -17,7 +16,26 @@
     transform: translateY(-20px);
   }
 
+  .card-img{ margin: 20px 15px;;
+    width: 280px;
+    ;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.80);
+    overflow: hidden;  
+    transition: all 0.20s ease-in;
+    cursor: pointer;}
+    
+.cardDetail{margin: 20px 15px;;
+  width: 280px;
+  overflow: hidden;
+  cursor: pointer;}
+
+
   .detalle{
-    border-top: black solid 2px;
     background-color:gold;padding: 10
   }
+
+  p{text-align: left; font-size: 20px;font-weight: 20px; margin-left: 10px}
+  h2{margin-bottom: 10px;}
+  h3{text-align: left; font-size: 20px ;}
+  h4{text-align: left; }
