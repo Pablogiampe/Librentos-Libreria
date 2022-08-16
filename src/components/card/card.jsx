@@ -1,6 +1,6 @@
 import "./card.css";
-
-function Card({ name, stock, img,}) {
+import {Link} from "react-router-dom";
+function Card({ name, stock, img, id}) {
   return (
     <div className="card">
       <div className="img">
@@ -9,7 +9,10 @@ function Card({ name, stock, img,}) {
       <div className="detalle">
         <h2>{name}</h2>
         <h3>Cantidad: {stock}</h3>
-  
+        <Link to={"/detalle/${id}"}>
+        text="Ver más"
+          
+        </Link>
       </div>
     </div>
   );

@@ -14,6 +14,7 @@ function ItemDetail({ name, stock, img, description}) {
 
     <h4 className="descripcion">Descripcion:</h4><p>{description}</p>
         <h3> Cantidad: {stock}</h3>
+        
         </div>
     </div>
   );

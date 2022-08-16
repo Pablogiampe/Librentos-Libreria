@@ -6,7 +6,7 @@ import Card from "../card/card"
 
 function Productos() {
     return new Promise((resolve, reject) => {
-      setTimeout(() => resolve(productos), 3000);
+      setTimeout(() => resolve(productos),1500 );
     });
   }
   
@@ -26,7 +26,7 @@ function Productos() {
       <div className="Container">
         {producto.map((item) => {
           return (
-          <Card name={item.name}stock={item.stock}img={item.img}/>
+          <Card name={item.name}stock={item.stock}img={item.img} id={item.id} />
           );
         })}
       </div>
