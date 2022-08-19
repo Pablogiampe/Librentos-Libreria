@@ -1,41 +1,25 @@
-import React,{useState} from "react";
-import './ItemCount.css'
+import React, { useState } from "react";
 
-const ItemCount = ({stock,initial, onAdd})=>{
+function ItemCount(props) {
+  const [count, setCount] = useState(props.initial);
 
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
 
-    const[count,setCount]=useState(initial)
-       
-    
+  const handleDecrement = () => {
+    setCount(count - 1);
+  };
 
-
-const restar =()=> {
-        if(count >1){setCount(count -1)}
-    }
-
-const sumar =()=>{
-    if(stock > count)
-    {setCount(count+1)}
-
-}
- 
-
-
-    return(
-<>
-    <div className='containerButton'>
-        <button className="Boton" onClick={restar}>-</button>
-        <label className="contador" >{count}</label>
-        <button className="Boton" onClick={sumar}>+</button>
-
-    </div>
-
-
-
-
-</>
-)
-
+  return (
+    <>
+      <h3>Item Counter</h3>
+      <button onClick={handleDecrement}>restar</button>
+      <span>{count}</span>
+      <button onClick={handleIncrement}>sumar</button>
+      <button onClick={()=>props.onAdd(count)}>Finalizar Compra</button>
+    </>
+  );
 }
 
-export default ItemCount
+export default ItemCount;
