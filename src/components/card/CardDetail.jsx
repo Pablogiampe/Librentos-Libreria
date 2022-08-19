@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./card.css";
 import ItemCount from "../ItemCount/ItemCount";
-
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { cartContext } from "../../store/cartContext";
 
@@ -17,20 +17,23 @@ function CardDetail({ id, title, price, img, category, stock }) {
   }
 
   return (
+    <div className="main">
     <div className="card">
 
     
       
-      <div className="card-img">
-        <img src={img} alt="imagen" />
+      <div className="col">
+        <img className="detailImg" src={img} alt="imagen" />
       </div>
-      <div className="card-detail">
+     
+      
+    </div> 
+ <div className="cardDetail">
         <h2>{title}</h2>
         <h3>$ {price}</h3>
-      </div>     
      
-      { 
-        quantityInCart === 0 ? (
+     
+      { quantityInCart === 0 ? (
           <ItemCount
             initial={1}
             stock={stock}
@@ -39,10 +42,10 @@ function CardDetail({ id, title, price, img, category, stock }) {
             value={quantityInCart}
           />
         ) : (
-          <a href="/cart">Ir al carrito</a>
+          <Link to="/cart">Ir al carrito</Link>
         )
-      }
-    </div> 
+      } </div>     
+    </div>
   );
 }
 

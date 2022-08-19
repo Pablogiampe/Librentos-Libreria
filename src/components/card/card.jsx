@@ -3,24 +3,20 @@ import "./card.css";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 
-function Card({ id, title, price, img, category,}) {
+function Card({ id, title, price, img, stock}) {
   return (
-    <div className="card">
+    <div className="card ">
+      <Link to={`/detalle/${id}`}>
       <div className="card-img">
         <img src={img} alt="imagen" />
-      </div>
+      </div> </Link> 
       <div className="card-detail">
-        <h2>{title}</h2>
-        <p>{category}</p>
+        <h2 className="h2">{title}</h2>
         <h3>${price}</h3>
-      
-
-        <Link to={`/detalle/${id}`}>
-          <Button text="Ver más"></Button>
-        </Link>       
-        
-      </div>
-    </div>
+        <h4>Disponibles: {stock}</h4>
+        </div>
+   
+     </div>
   );
 }
 
