@@ -3,8 +3,6 @@ import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import ItemListContainer from "./components/ItemList/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-
 import { CartProvider } from "./store/cartContext";
 import CartView from "./components/CartView/CartView";
 
@@ -17,7 +15,6 @@ function App() {
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/detalle/:id" element={<ItemDetailContainer />} />
-          
             <Route path="/cart" element={<CartView />} />
           </Routes>
         </CartProvider>

@@ -1,4 +1,4 @@
-const itemsData = [
+const productos = [
   {
     id: 1,
     title: "Macetas",
@@ -37,4 +37,4 @@ const itemsData = [
   
 ];
 
-export default itemsData;
+export default productos;

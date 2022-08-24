@@ -1,8 +1,5 @@
-import Button from "../Button/Button";
 import "./card.css";
 import { Link } from "react-router-dom";
-import ItemCount from "../ItemCount/ItemCount";
-
 function Card({ id, title, price, img, stock}) {
   return (
     <div className="card ">
