@@ -1,26 +1,40 @@
-import "./App.css";
-import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
-import ItemListContainer from "./components/ItemList/ItemListContainer";
-import NavBar from "./components/NavBar/NavBar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CartProvider } from "./store/cartContext";
-import CartView from "./components/CartView/CartView";
+import './App.css';
+import ItemListContainer from './components/ItemList/ItemListContainer';
+import Navbar from './components/NavBar/Navbar.js';
+import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import CartProvider from './store/cartContext';
+import Cart from './components/Cart/Cart';
+
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <CartProvider>
-          <NavBar />
+    
+    <>
+    
+
+    <BrowserRouter>
+      <CartProvider>
+        <Navbar />
           <Routes>
-            <Route path="/" element={<ItemListContainer />} />
-            <Route path="/detalle/:id" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<CartView />} />
+            
+
+            <Route path="/" element ={<ItemListContainer greeting="Productos en descuento" />} />
+            <Route path="/item/:id" element ={<ItemDetailContainer />} />
+            <Route path="/category/:id" element ={<ItemListContainer />} />
+            <Route path="/cart" element={<Cart />}></Route>
+            <Route path="*" element ="No hay ninguna pagina :c" />
           </Routes>
-        </CartProvider>
-      </BrowserRouter>
-    </div>
+      </CartProvider>
+    </BrowserRouter>
+
+    
+    
+    </>
+
+  
   );
 }
 
 export default App;
+
