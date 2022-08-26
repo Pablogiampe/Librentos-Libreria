@@ -1,7 +1,7 @@
 
-import '../App.css'
+import '../../App.css'
 import CartWidget from '../Cart/CartWidget';
-import {NavLink, Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 
 
@@ -26,7 +26,7 @@ function Navbar(){
             </li>
             <li className="nav-item">
             
-              <NavLink className="nav-link fw-bolder text-light" to="/cart"><CartWidget /></NavLink>
+              <NavLink className="nav-link fw-bolder text-light" to="/cart"><CartWidget/></NavLink>
             </li>
           </ul>
          

@@ -10,7 +10,7 @@ function Cart() {
     if (cart.length === 0) { return (
             <div className='no-products'>
                 <div>
-                <p><h1>Lamentablemente no tiene ningun producto agregado</h1></p>
+                <p><h1>No Agrego ningun producto al carrito</h1></p>
                 <p><NavLink to={`/`} className='boton-no-products'>Inicio para comprar productos</NavLink></p>
                 </div>
             </div>
