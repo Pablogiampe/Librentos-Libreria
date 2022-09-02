@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { CartContext } from '../../store/cartContext';
 import CartItem from './CartItem';
 import {NavLink} from "react-router-dom";
+import UserForm from '../UserForm/UserForm';
 
 function Cart() {
     const { cart, removeItem, deleteAll } = useContext(CartContext);const total = []
@@ -36,6 +37,11 @@ function Cart() {
                     })}
                     
                     <button  className="delete-all" onClick={deleteAll}> Vaciar Carrito </button>
+                </div>
+                <div className='cards'>
+                    <div className='div-cards'>
+                    <UserForm cart={cart} total={totalFinal}/>
+                    </div>
                 </div>
             </div>
         )

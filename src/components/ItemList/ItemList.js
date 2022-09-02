@@ -1,5 +1,5 @@
 import React from 'react'
-import Item from '../Card'
+import Card from '../Card'
 import {Link} from "react-router-dom";
 
 
@@ -11,8 +11,8 @@ function ItemList({ data }) {
         return(
 
           <div className='items' > 
-            <Link  to={`/item/${(product.id-1)}`}>
-            <Item  
+            <Link  to={`/item/${(product.id)}`}>
+            <Card  
 
               key={Number(product.id)}
               pictureUrl={product.pictureUrl}

@@ -4,7 +4,7 @@ import {createContext, useState} from 'react'
 export const CartContext = createContext()
 
 function CartProvider({children}) {
-  function encontrarItem(id){ return copyCart.findIndex(item => item.id === Number(id))}
+  function encontrarItem(id){ return copyCart.findIndex(item => item.id === id)}
   function isInCart(id) {return (copyCart.some(itemInCart => itemInCart.id === id ))}
   const [cart, setCart] = useState([])
   let copyCart = [...cart]
