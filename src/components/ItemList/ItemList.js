@@ -16,7 +16,7 @@ function ItemList({ data }) {
 
               key={Number(product.id)}
               pictureUrl={product.pictureUrl}
-              name={product.title}
+              name={product.name}
               price={product.price}
               
             />

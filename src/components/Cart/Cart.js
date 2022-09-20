@@ -35,11 +35,12 @@ function Cart() {
                             />
                         )
                     })}
-                    
-                    <button  className="delete-all" onClick={deleteAll}> Vaciar Carrito </button>
+                    <div className='Final'>
+                    <button  className="delete-all" onClick={deleteAll}> Vaciar Carrito </button><p className='ms-5'> Precio final: ${totalFinal}</p></div>
+              
                 </div>
                 <div className='cards'>
-                    <div className='div-cards'>
+                    <div className='forms'>
                     <UserForm cart={cart} total={totalFinal}/>
                     </div>
                 </div>

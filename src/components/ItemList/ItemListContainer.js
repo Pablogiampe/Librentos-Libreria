@@ -11,7 +11,7 @@ function ItemListContainer() {
   
   const [data, setData] = useState([])
   const idProducto = useParams().id
-  const products = []
+ 
   
   
   
@@ -53,9 +53,11 @@ function ItemListContainer() {
 
 
   return (
-    <>
+   
+   <><div className="bg-black">
+    <img className="main-logo bg-black" src="../assets/logo2.svg"></img>
     <p className="titulo-productos">{idProducto}</p>
-
+</div>
     <ItemList data={data}/>
     </>
   )

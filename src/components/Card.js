@@ -6,16 +6,21 @@ function Card({pictureUrl,name,price,}) {
   
   return (
     <div className='cards'>
-    <div className="div-cards" >
+   
         
-        <img src={pictureUrl} className="logoCard" alt="50"></img>
-        <p>{name}</p>
-        
-        <p>Precio: ${price}</p>
-        
+       
+
+        <div className="div-cards"><figure>
+      <img src={pictureUrl} ></img>
+      <div className="capa">
+        <h3>{name}</h3>
+        <h4>Precio: ${price}</h4>
+      </div>
+    </figure></div>
+
     </div>
+   
     
-    </div>
   )
 }
 

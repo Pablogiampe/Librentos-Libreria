@@ -5,17 +5,22 @@ import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import CartProvider from './store/cartContext';
 import Cart from './components/Cart/Cart';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
   return (
     
-    <>
+    <div className="page-container">
+    <div className="content-wrap">
     
 
     <BrowserRouter>
       <CartProvider>
         <Navbar />
+        <div>
+          <img href></img>
+        </div>
           <Routes>
             
 
@@ -24,13 +29,14 @@ function App() {
             <Route path="/category/:id" element ={<ItemListContainer />} />
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="*" element ="No hay ninguna pagina :c" />
+          <Route path='/Gracias' element={<div><h1 className='text-center'>Gracias por tu compra</h1><button className='Boton' onClick={() => window.location.reload(false)}>Finalizar</button></div>}/>
           </Routes>
       </CartProvider>
     </BrowserRouter>
-
+    </div>
+    <Footer/>
+    </div>
     
-    
-    </>
 
   
   );

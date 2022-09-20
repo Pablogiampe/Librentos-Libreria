@@ -41,9 +41,10 @@ function ItemDetailContainer() {
       <ItemDetail 
             id={item.id}
             pictureUrl={item.pictureUrl}
-            name={item.title}
+           
             price={item.price}
             stock={item.stock}
+            name={item.name}
       
             
       />

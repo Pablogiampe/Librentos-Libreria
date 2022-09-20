@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore} from "firebase/firestore";
+import {addDoc, collection, Firestore, getFirestore,initializeFirestore} from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyCiY3NZzCW6zhNmsVFgHBulAZrhKYkbsWI",
   authDomain: "e-commerce-d645e.firebaseapp.com",
@@ -10,9 +10,16 @@ const firebaseConfig = {
   measurementId: "G-PF82H0TCM6"
 };
 const app = initializeApp(firebaseConfig);
+initializeFirestore(app, {
+  ignoreUndefinedProperties: true
+});
+
+
 const db = getFirestore(app)
 
 
 initializeApp(firebaseConfig);
+
+
 
 export default db

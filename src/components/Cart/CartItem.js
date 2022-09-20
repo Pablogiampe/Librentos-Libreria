@@ -1,20 +1,19 @@
 import React from 'react'
 
 
-function CartItem({img,name,price,amount, removeItemCart,id}) {
-  return (
-    <div className='cards'>
-    <div className="div-cards">
-        <img src={img} className="logoCard"></img>
-        <h2 className='description'>{name}</h2>
-        <h3 className='description'>Precio total:  ${price*amount}</h3>
-        <h3 className='description'>Cantidad de productos: {amount}</h3>
-        <button className="delete-all " onClick={()=>removeItemCart({id})}>Remover item</button>
-        
+function CartItem({img,name,title,price,amount, removeItemCart,id}) {
+  return ( 
+  
+  
+  
+    <div class="parent">
+    <div class="div1"><img width={80} src={img} alt={name} className='imgCart' /> </div>
+    <div class="div2">{name} </div>
+    <div class="div3"> ${price}</div>
+    <div class="div4">{amount} </div>
     </div>
-    
-    </div>
-    
+  
+  
   )
 }
 

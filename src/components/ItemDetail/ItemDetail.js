@@ -18,20 +18,19 @@ function ItemDetail({pictureUrl,name,price, id, stock}) {
     return (
 
       
-      <div className='parent'>
+      <div className='parent3'>
 
-
-<div className="div1"> <h1>{name}</h1> <p>Precio: ${price}</p></div>
-<div className="div2">  <h2>Stock disponible: {stock}</h2></div>
-<div className="div3"> <img src={pictureUrl} className="img-detail" alt="50"></img></div>
-<div className="div4">   {(click===0) ?
+<div class="divl1"> <img src={pictureUrl} className='detailImg' alt="50"></img></div>
+<div class="divl2"> <h1>{name}</h1> <p>Precio: ${price}</p></div>
+<div class="divl3"> <h2>Stock disponible: {stock}</h2> </div>
+<div class="divl4">  {(click===0) ?
               <ItemCount initial="1 " stock={stock} onAdd={onCount}/>
-              :<Link to="/cart"><button className='Button' >Ir al carrito</button></Link>
-          }   </div>
+              :<Link to="/cart"><button className='Boton' >Ir al carrito</button></Link>}</div>
+</div>
 
-      </div>
-    )
-  }
 
+  
+    )}
+  
 
 export default ItemDetail

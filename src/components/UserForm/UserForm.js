@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import db from '../../firebase/config';
-import {collection, addDoc} from "firebase/firestore";
-
+import {collection, addDoc, Timestamp} from "firebase/firestore";
+import { Navigate,useNavigate } from 'react-router-dom';
 
 function UserForm({cart}) {
 
@@ -12,6 +12,8 @@ function UserForm({cart}) {
     });
     const totalFinal = total.reduce((acumulador, b) => acumulador + b, 0)
 
+const[orderId, setOrderId]= useState(false)
+let Navigation = useNavigate()
     const [userData, setUserData] = useState({
         name:"",
         email:"",
@@ -47,65 +49,57 @@ function UserForm({cart}) {
 
       async function handleSubmit(evt) {
         evt.preventDefault();    
-
+  
 
         const ordersCollection = collection(db, "ordenes")
-        ;addDoc(ordersCollection, orden)
+        const docRef= await addDoc(ordersCollection,orden)
+    console.log(docRef)
+
+    setOrderId(docRef.id)
+    Navigation('/Gracias')
         }
-
+if(orderId){
+  return(
+  <div>
+    <h1>Gracias por comprar con nosotros.</h1>
+  </div>).then(handleReset)
+}
     return (
-        <form onReset={handleReset} onSubmit={handleSubmit}>
-        <div className="form-item">
-          <label htmlFor="name">Nombre</label>
-          <input
-            value={userData.name}
-            onChange={inputChangeHandler}
-            name="name"
-            type="text"
-            placeholder="Nombre"
-            required
-          />
-        </div>
+    <form  onReset={handleReset} onSubmit={handleSubmit}>
+      <div class="mb-3 mx-5">
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input class="form-control"  value={userData.name}
+                  onChange={inputChangeHandler}
+             name="name"
+           type="text"
+           
+               required/>
+      </div>
+      <div class="mb-3 mx-5">
+        <label for="exampleInputPassword1" class="form-label">telefono</label>
+        <input class="form-control" value={userData.telefono}
+    onChange={inputChangeHandler}
+    name="telefono"
+    type="text"
 
-        <p>TotalFInal: {totalFinal}</p>
-
-        <div className="form-item">
-          <label htmlFor="telefono">Telefono</label>
-          <input
-            value={userData.telefono}
-            onChange={inputChangeHandler}
-            name="telefono"
-            type="text"
-            placeholder="Telefono"
-            required
-          />
-        </div>
-
-        <div className="form-item">
-          <label htmlFor="email">Email</label>
-          <input
-            value={userData.email}
-            onChange={inputChangeHandler}
-            name="email"
-            type="text"
-            placeholder="Correo"
-            required
-          />
-        </div>
-
-        <div>
-          <button type="submit" onTouch={handleSubmit}>
-            Finalizar Compra
-          </button>
-        </div>
-      </form>
+    required/>
+      </div>
+      <div class="mb-3 mx-5">
+        <label for="exampleInputPassword1" class="form-label">Email</label>
+        <input class="form-control" value={userData.email}
+    onChange={inputChangeHandler}
+    name="email"
+    type="text"
+  
+    required/>
+      </div>
+      <button type="submit" class="btn btn-warning mx-5" onTouch={handleSubmit}>Finalizar Compra</button>
+      
+    </form>
       );
 
 
 }
 
-
-
-
-
+ 
 export default UserForm
