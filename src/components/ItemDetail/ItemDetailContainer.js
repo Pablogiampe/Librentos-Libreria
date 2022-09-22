@@ -21,7 +21,7 @@ function ItemDetailContainer() {
     
       getDocs(productosCollection).then(snapshot =>{
         const docsData = snapshot.docs.map(doc => {
-          return {... doc.data(), id:  doc.id}
+          return {...doc.data(), id:  doc.id}
         })
 
         const itemFiltrado = docsData.filter((elemento) => elemento.id === x)

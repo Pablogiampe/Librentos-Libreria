@@ -11,7 +11,7 @@ function Cart() {
     if (cart.length === 0) { return (
             <div className='no-products'>
                 <div>
-                <p><h1>No Agrego ningun producto al carrito</h1></p>
+                <h1>No Agrego ningun producto al carrito</h1>
                 <p><NavLink to={`/`} className='boton-no-products'>Inicio para comprar productos</NavLink></p>
                 </div>
             </div>

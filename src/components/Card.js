@@ -11,7 +11,7 @@ function Card({pictureUrl,name,price,}) {
        
 
         <div className="div-cards"><figure>
-      <img src={pictureUrl} ></img>
+      <img src={pictureUrl} alt='libros' ></img>
       <div className="capa">
         <h3>{name}</h3>
         <h4>Precio: ${price}</h4>

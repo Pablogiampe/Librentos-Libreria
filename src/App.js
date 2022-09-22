@@ -18,9 +18,7 @@ function App() {
     <BrowserRouter>
       <CartProvider>
         <Navbar />
-        <div>
-          <img href></img>
-        </div>
+      
           <Routes>
             
 

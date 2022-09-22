@@ -7,7 +7,7 @@ function UserForm({cart}) {
 
     const total = []
     cart.forEach(function (arrayItem) {
-        var x = arrayItem.price * arrayItem.click;
+        let x = arrayItem.price * arrayItem.click;
         total.push(x);
     });
     const totalFinal = total.reduce((acumulador, b) => acumulador + b, 0)
@@ -66,34 +66,34 @@ if(orderId){
 }
     return (
     <form  onReset={handleReset} onSubmit={handleSubmit}>
-      <div class="mb-3 mx-5">
-        <label for="exampleInputEmail1" class="form-label">Nombre</label>
-        <input class="form-control"  value={userData.name}
+      <div className="mb-3 mx-5">
+        <label htmlFor="exampleInputEmail1" className="form-label">Nombre</label>
+        <input className="form-control"  value={userData.name}
                   onChange={inputChangeHandler}
              name="name"
            type="text"
            
                required/>
       </div>
-      <div class="mb-3 mx-5">
-        <label for="exampleInputPassword1" class="form-label">telefono</label>
-        <input class="form-control" value={userData.telefono}
+      <div className="mb-3 mx-5">
+        <label htmlFor="exampleInputPassword1" className="form-label">telefono</label>
+        <input className="form-control" value={userData.telefono}
     onChange={inputChangeHandler}
     name="telefono"
     type="text"
 
     required/>
       </div>
-      <div class="mb-3 mx-5">
-        <label for="exampleInputPassword1" class="form-label">Email</label>
-        <input class="form-control" value={userData.email}
+      <div className="mb-3 mx-5">
+        <label htmlFor="exampleInputPassword1" className="form-label">Email</label>
+        <input className="form-control" value={userData.email}
     onChange={inputChangeHandler}
     name="email"
     type="text"
   
     required/>
       </div>
-      <button type="submit" class="btn btn-warning mx-5" onTouch={handleSubmit}>Finalizar Compra</button>
+      <button type="submit" className="btn btn-warning mx-5" onChange={handleSubmit}>Finalizar Compra</button>
       
     </form>
       );

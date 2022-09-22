@@ -10,7 +10,7 @@ function ItemList({ data }) {
       
         return(
 
-          <div className='items' > 
+          <div className='items' key={product.id}> 
             <Link  to={`/item/${(product.id)}`}>
             <Card  
 

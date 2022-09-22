@@ -20,10 +20,10 @@ function ItemDetail({pictureUrl,name,price, id, stock}) {
       
       <div className='parent3'>
 
-<div class="divl1"> <img src={pictureUrl} className='detailImg' alt="50"></img></div>
-<div class="divl2"> <h1>{name}</h1> <p>Precio: ${price}</p></div>
-<div class="divl3"> <h2>Stock disponible: {stock}</h2> </div>
-<div class="divl4">  {(click===0) ?
+<div className="divl1"> <img src={pictureUrl} className='detailImg' alt="50"></img></div>
+<div className="divl2"> <h1>{name}</h1> <p>Precio: ${price}</p></div>
+<div className="divl3"> <h2>Stock disponible: {stock}</h2> </div>
+<div className="divl4">  {(click===0) ?
               <ItemCount initial="1 " stock={stock} onAdd={onCount}/>
               :<Link to="/cart"><button className='Boton' >Ir al carrito</button></Link>}</div>
 </div>
